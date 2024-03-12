@@ -18,10 +18,11 @@
 
     <div class="slider"
     @mouseenter="isNext = false"
-    @mouseleave="isNext= true">
-      <div class="items-wrapper">
-        <div class="wrapper">
-          <img class="img img-fluid" :src="images[counterImage].photo" alt="images[counterImage].photo">
+    @mouseleave="isNext= true"
+    >
+    <div class="items-wrapper">
+      <div class="wrapper">
+          <img  class="img img-fluid" :src="images[counterImage].photo" alt="images[counterImage].photo">
           <h1 class="title">{{ images[counterImage].title }}</h1>
           <p class="description">
             {{ images[counterImage].text }}
