@@ -52,11 +52,15 @@ createApp ({
       }else if(this.counterImage < 0){
         this.counterImage = this.images.length - 1
       }
+    },
+
+    autoPlay(){
+      setInterval(() => this.nextPrev(true), 2000);
     }
   },
 
   mounted(){
-
+    this.autoPlay()
   }
 
 
