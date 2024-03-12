@@ -47,7 +47,7 @@ createApp ({
   },
 
   mounted(){
-    console.log(counterImage);
+    
   }
 
 
