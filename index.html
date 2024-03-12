@@ -19,20 +19,30 @@
     <div class="slider">
       <div class="items-wrapper">
         <div class="wrapper">
-          <img class="img img-fluid" :src="images.photo[counterImage]" alt="#">
-          <h1 class="title">Spider-man Miles Morales</h1>
+          <img class="img img-fluid" :src="images[counterImage].photo" alt="images[counterImage].photo">
+          <h1 class="title">{{ images[counterImage].title }}</h1>
           <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, mollitia?
+            {{ images[counterImage].text }}
           </p>
         </div>
       </div>
 
       
       <div class="thumbnail-wrapper">
-        <img class="thumb" src="#" alt="#">
+        <img v-for="(element, index) in images" class="thumb" :src="images.photo" alt="#" :class="{'active': index === counterImage}">
       </div>
-      <div class="btn-arrow top"><i class="fa-solid fa-chevron-up"></i></div>
-      <div class="btn-arrow down"><i class="fa-solid fa-chevron-down"></i></div>
+
+      <div 
+      @click="nextPrev(false)"
+      class="btn-arrow top"
+      >
+      <i class="fa-solid fa-chevron-up"></i>
+      </div>
+      <div 
+      @click="nextPrev(true)"
+      class="btn-arrow down">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
     </div>
   </div>
 

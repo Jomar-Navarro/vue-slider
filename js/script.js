@@ -43,11 +43,13 @@ createApp ({
   },
 
   methods: {
-
+    nextPrev(isNext){
+      isNext ? this.counterImage++ : this.counterImage--;
+    }
   },
 
   mounted(){
-    
+
   }
 
 
