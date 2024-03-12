@@ -55,7 +55,11 @@ createApp ({
     },
 
     autoPlay(){
-      setInterval(() => this.nextPrev(true), 2000);
+      setInterval(() => {
+        if (this.isNext) {
+          this.nextPrev(true)
+        }
+      }, 2000);
     }
   },
 

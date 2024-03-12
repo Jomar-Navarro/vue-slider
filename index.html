@@ -16,7 +16,9 @@
 
   <div id="app" class="main-wrapper">
 
-    <div class="slider">
+    <div class="slider"
+    @mouseenter="isNext = false"
+    @mouseleave="isNext= true">
       <div class="items-wrapper">
         <div class="wrapper">
           <img class="img img-fluid" :src="images[counterImage].photo" alt="images[counterImage].photo">
@@ -28,7 +30,7 @@
       </div>
 
       <div  class="thumbnail-wrapper">
-        <img v-for="(img, index) in images" class="thumb" :src="img.photo" alt="#" :class="{'active': index === counterImage}">
+        <img @click="counterImage = index" v-for="(img, index) in images" class="thumb" :src="img.photo" alt="#" :class="{'active': index === counterImage}">
 
       <div 
         @click="nextPrev(false)"
