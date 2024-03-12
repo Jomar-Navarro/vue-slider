@@ -27,25 +27,24 @@
         </div>
       </div>
 
-      
-      <div class="thumbnail-wrapper">
-        <img v-for="(element, index) in images" class="thumb" :src="images.photo" alt="#" :class="{'active': index === counterImage}">
-      </div>
+      <div  class="thumbnail-wrapper">
+        <img v-for="(img, index) in images" class="thumb" :src="img.photo" alt="#" :class="{'active': index === counterImage}">
 
       <div 
-      @click="nextPrev(false)"
-      class="btn-arrow top"
-      >
-      <i class="fa-solid fa-chevron-up"></i>
+        @click="nextPrev(false)"
+        class="btn-arrow top">
+        <i class="fa-solid fa-chevron-up"></i>
       </div>
-      <div 
-      @click="nextPrev(true)"
-      class="btn-arrow down">
-      <i class="fa-solid fa-chevron-down"></i>
-    </div>
+
+        <div 
+          @click="nextPrev(true)"
+          class="btn-arrow down">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+      </div>
     </div>
   </div>
-
   <script src="js/script.js"></script>
 </body>
 </html>

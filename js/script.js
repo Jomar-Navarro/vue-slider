@@ -39,12 +39,19 @@ createApp ({
       ],
       
       counterImage: 0,
+      isNext: true,
     }
   },
 
   methods: {
     nextPrev(isNext){
       isNext ? this.counterImage++ : this.counterImage--;
+
+      if (this.counterImage === this.images.length) {
+        this.counterImage = 0
+      }else if(this.counterImage < 0){
+        this.counterImage = this.images.length - 1
+      }
     }
   },
 
