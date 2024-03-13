@@ -40,6 +40,7 @@ createApp ({
       
       counterImage: 0,
       isNext: true,
+      goNext: true,
     }
   },
 
@@ -57,9 +58,14 @@ createApp ({
     autoPlay(){
       setInterval(() => {
         if (this.isNext) {
-          this.nextPrev(true)
+          this.nextPrev(this.goNext)
         }
       }, 2000);
+    },
+
+    invertAutoscroll(){
+      console.log('invert');
+      this.goNext = !this.goNext;
     }
   },
 
